@@ -7,11 +7,10 @@ include_once("conexao.php");
 			$sql->bindValue(":l", $email);
 			$sql->execute();
 			if ($sql->rowCount() > 0) {
-				echo '<script>alert("asdasd");</script>';
 				return false;
 			}
 			else{
-			$sql= $pdo->prepare('INSERT into tb_pessoa (cd_pessoa, nm_nome, nm_email, nm_password, dt_nascimento) values(null,:nm, :ema, :pass, :dt)');
+			$sql= $pdo->prepare('INSERT into tb_pessoa (cd_pessoa, nm_nome, nm_email,nm_password,dt_nascimento) values(null,:nm,:ema,:pass,:dt)');
 			$sql->bindValue(":nm",$nome);
 			$sql->bindValue(":ema",$email);
 			$sql->bindValue(":pass",md5($password));
@@ -19,8 +18,6 @@ include_once("conexao.php");
 			$sql->execute();
 				return true;
 			}
-
-
 		}
 	}
 

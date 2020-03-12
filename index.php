@@ -1,17 +1,3 @@
-<?php 
-require_once("classesPHP/conexao.php");
-require_once("classesPHP/user.php");
-$res='';
-$c = new Conexao;
-$c->conectar("db_curriculo","localhost","root", "");  
-$u = new User;
-    if ($_POST) {
-        if ($_POST['password'] == $_POST['passwordconf']) {
-            $u->cadastrar($_POST['name'], $_POST['email'], $_POST['password'], $_POST['nascimento']);
-            
-        }
-    }
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -86,7 +72,7 @@ $u = new User;
         </div>
         <div class="modal-overlay">
         <div class="modal-preCadastro">
-            <form action method="POST">
+            <form action method="POST" id="form">
             <a class="modal-close" data-toggle="modal" data-dismiss>&times;</a>
         	<h1>Pré-Cadastro</h1>
             <label>Nome:</label>
@@ -100,6 +86,7 @@ $u = new User;
             <input type="password" name="passwordconf">
             <label>nascimento:</label>
         	<input type="date" name="nascimento">
+            <br>
         	<input class="form-btn" type="submit" name="">
             </form>
         </div>
@@ -107,5 +94,27 @@ $u = new User;
         <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 <!--         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script> -->
         <script type="text/javascript" src="js/script.js"></script>
+      
+        <script type="text/javascript" src="jQuery-Mask-Plugin-master/test/sinon-1.10.3.js"></script>
+        <script type="text/javascript" src="jQuery-Mask-Plugin-master/test/sinon-qunit-1.0.0.js"></script>
+
+        <script type="text/javascript" src="jQuery-Mask-Plugin-master/src/jquery.mask.js"></script>
+        <script type="text/javascript" src="jQuery-Mask-Plugin-master/test/jquery.mask.test.js"></script>
+
+        <script type="text/javascript">
+            $(document).on('submit','#form',function(){
+                var dados = $(this).serialize();
+                //tratar erros
+                $.ajax({
+                    type: 'POST',
+                    url: 'request.php?user=cadastro',
+                    data: dados,
+                    success: function(retorno){
+                        alert(retorno);
+                    }
+                });
+                return false;
+            });
+        </script>
     </body>
 </html>
