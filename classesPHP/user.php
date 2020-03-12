@@ -3,10 +3,11 @@ include_once("conexao.php");
 	class User{
 		public function cadastrar($nome, $email, $password, $nascimento){
 			global $pdo;
-			$sql= $pdo->prepare('SELECT from tb_pessoa cd_pessoa where nm_email= :l');
-			$sql->bindValue(":l", $emal);
+			$sql= $pdo->prepare('SELECT cd_pessoa from tb_pessoa where nm_email= :l');
+			$sql->bindValue(":l", $email);
 			$sql->execute();
-			if ($sql->rowCount()>0) {
+			if ($sql->rowCount() > 0) {
+				echo '<script>alert("asdasd");</script>';
 				return false;
 			}
 			else{
