@@ -22,6 +22,7 @@
                 </ul>
             </nav>
             <button class="cta open-modal" data-toggle="modal" data-target=".modal-overlay">Cadastrar</button>
+            <button class="cta-log ml-15 open-logModal" data-toggle="modal" data-target=".logModal-overlay">Login</button>
             <button class="menu cta open">Menu</button>
         </header>
         <div id="mobile-menu" class="overlay">
@@ -88,6 +89,19 @@
         	<input type="date" name="nascimento">
             <br>
         	<input class="form-btn" type="submit" name="">
+            </form>
+        </div>
+        </div>
+        <div class="logModal-overlay">
+        <div class="modal-login">
+            <form action method="POST" id="form-login">
+            <a class="logModal-close" data-toggle="modal" data-dismiss>&times;</a>
+            <h1>Login</h1>
+            <label>email:</label>
+            <input type="email" name="email">
+            <label>senha:</label>
+            <input type="password" name="password">
+            <input class="form-btn" type="submit" name="">
             </form>
         </div>
         </div>

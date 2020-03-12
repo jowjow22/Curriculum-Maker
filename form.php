@@ -4,7 +4,6 @@
 	<title></title>
 	<link rel="stylesheet" href="materialize/css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="stepperPlugin/css/mstepper.min.css">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 	<meta charset="utf-8">

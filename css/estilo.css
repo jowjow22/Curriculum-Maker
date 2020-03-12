@@ -13,7 +13,7 @@ header {
 	align-items: center;
 	padding: 25px 6%;
 }
-header button{
+header .cta{
 	margin-left: auto;
 }
 .logo {
@@ -46,7 +46,7 @@ header button{
   color: #fff;
 }
 
-.cta {
+.cta, .cta-log {
   padding: 12px 25px;
   background-color: #fff;
   border: none;
@@ -66,7 +66,7 @@ header button{
   transition: all 0.3s ease 0s;
 }
 
-.cta:hover {
+.cta:hover, .cta-log:hover {
   transform: scale(1.06);
 }
 
@@ -191,7 +191,7 @@ header hr{
 
 @media only screen and (max-width: 1000px) {
   .nav-links,
-  .cta {
+  .cta, .cta-log {
     display: none;
   }
   .menu {
@@ -374,7 +374,7 @@ header hr{
   	}
 }
 /*MODAL*/
-.modal-overlay{
+.modal-overlay, .logModal-overlay{
   display: none;
   position: absolute;
   z-index: 10;
@@ -387,7 +387,7 @@ header hr{
   transition: 2s;
   background: rgba(0,0,0,.4);
 }
-.modal-preCadastro form{
+.modal-preCadastro form, .modal-login form{
   display: inline-grid;
   position: absolute;
   position: fixed;
@@ -402,7 +402,8 @@ header hr{
   padding: 20px 60px;
   box-shadow: 0px 0px 40px rgba(0,0,0,0.5);
 }
-.modal-preCadastro form input[type="text"], input[type="password"], input[type="email"],input[type="date"]{
+.modal-preCadastro form input[type="text"], input[type="password"],input[type="email"],input[type="date"],
+.modal-login form input[type="password"], input[type="email"]{
   border-top: none;
   border-left: none;
   border-right: none;
@@ -424,14 +425,17 @@ header hr{
   border-radius: 50px;
   margin-top: 15px;
 }
-.modal-preCadastro form a{
+.modal-preCadastro form a, .modal-login form a{
     margin-left: auto;
     font-size: 28pt;
     cursor: pointer;
 }
-.modal-preCadastro form h1{
+.modal-preCadastro form h1, .modal-login form h1{
   text-align: center;
   font-weight: bold;
   color: #6C63FF;
 
+}
+.ml-15{
+  margin-left: 15px;
 }
