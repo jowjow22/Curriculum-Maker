@@ -73,7 +73,7 @@
         </div>
         <div class="modal-overlay">
         <div class="modal-preCadastro">
-            <form action method="POST" id="form">
+            <form method="POST" id="form">
             <a class="modal-close" data-toggle="modal" data-dismiss>&times;</a>
         	<h1>Pré-Cadastro</h1>
             <label>Nome:</label>
@@ -94,7 +94,7 @@
         </div>
         <div class="logModal-overlay">
         <div class="modal-login">
-            <form action method="POST" id="form-login">
+            <form method="POST" id="form-login">
             <a class="logModal-close" data-toggle="modal" data-dismiss>&times;</a>
             <h1>Login</h1>
             <label>email:</label>
@@ -108,27 +108,6 @@
         <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 <!--         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script> -->
         <script type="text/javascript" src="js/script.js"></script>
-      
-        <script type="text/javascript" src="jQuery-Mask-Plugin-master/test/sinon-1.10.3.js"></script>
-        <script type="text/javascript" src="jQuery-Mask-Plugin-master/test/sinon-qunit-1.0.0.js"></script>
-
-        <script type="text/javascript" src="jQuery-Mask-Plugin-master/src/jquery.mask.js"></script>
-        <script type="text/javascript" src="jQuery-Mask-Plugin-master/test/jquery.mask.test.js"></script>
-
-        <script type="text/javascript">
-            $(document).on('submit','#form',function(){
-                var dados = $(this).serialize();
-                //tratar erros
-                $.ajax({
-                    type: 'POST',
-                    url: 'request.php?user=cadastro',
-                    data: dados,
-                    success: function(retorno){
-                        alert(retorno);
-                    }
-                });
-                return false;
-            });
-        </script>
+    
     </body>
 </html>

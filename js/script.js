@@ -35,3 +35,28 @@
          });
        return false;
      });
+
+     $(document).on('submit','#form-login',function(){
+                var dados = $(this).serialize();
+                $.ajax({
+                     type: 'POST',
+                     url: 'request.php?user=login',
+                     data: dados,
+                     success: function(retorno){
+                        window.location = 'home.php';
+                    }
+                 });
+               return false;
+      });
+     $(document).on('submit','#form-formacao',function(){
+                var dados = $(this).serialize();
+                $.ajax({
+                     type: 'POST',
+                     url: 'request.php?formacao=cadastro',
+                     data: dados,
+                     success: function(retorno){
+                        alert(retorno);
+                    }
+                 });
+               return false;
+      });
