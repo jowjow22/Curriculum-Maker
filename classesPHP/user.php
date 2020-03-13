@@ -27,11 +27,13 @@ include_once("conexao.php");
 			$sql->bindValue(":s",md5($password));
 			$sql->execute();
 			if ($sql->rowCount() > 0) {
-				echo "aaaaaaaaaaaaaaaaaaaaa";
-				return true; //logado com sucesso
+				$dados = $sql->fetch();
+				session_start();
+				$_SESSION['cd_pessoa'] = $dados['cd_pessoa'];
+				 echo $dados['cd_pessoa']; //logado com sucesso
 			}
 			else{
-				return false; //nao foi possivel logar
+				 echo "nao logou"; //nao foi possivel logar
 			}
 		}
 	}

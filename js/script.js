@@ -1,18 +1,18 @@
 
 	$(".open-modal").click(function(){
-	$(".modal-overlay").show();
+	$(".modal-overlay").fadeIn();
 	});
 
 	$(".modal-close").click(function(){
-	$(".modal-overlay").hide();
+	$(".modal-overlay").fadeOut();
 	});
 
 	$(".open-logModal").click(function(){
-	$(".logModal-overlay").show();
+	$(".logModal-overlay").fadeIn();
 	});
 
 	$(".logModal-close").click(function(){
-	$(".logModal-overlay").hide();
+	$(".logModal-overlay").fadeOut();
 	});
 
 
@@ -43,6 +43,7 @@
                      url: 'request.php?user=login',
                      data: dados,
                      success: function(retorno){
+                        alert(retorno);
                         window.location = 'home.php';
                     }
                  });

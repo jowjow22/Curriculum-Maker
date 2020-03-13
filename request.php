@@ -1,8 +1,7 @@
-<?php 
+ <?php 
 require_once("classesPHP/conexao.php");
 require_once("classesPHP/user.php");
 require_once("classesPHP/formacao.php");
-$res='';
 $c = new Conexao;
 $c->conectar("db_curriculo","localhost","root", "");  
 $u = new User;

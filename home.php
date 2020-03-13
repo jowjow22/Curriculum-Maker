@@ -1,5 +1,6 @@
 <?php 
-	if ($_SESSION['cd_user']=="") {
+session_start();
+	if (!isset($_SESSION['cd_pessoa'])) {
 		echo '<script>window.location="index.php"</script>';
 	}
  ?>
