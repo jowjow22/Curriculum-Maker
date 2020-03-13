@@ -61,3 +61,15 @@
                  });
                return false;
       });
+     $(document).on('submit','#form-exp',function(){
+                var dados = $(this).serialize();
+                $.ajax({
+                     type: 'POST',
+                     url: 'request.php?exp=cadastro',
+                     data: dados,
+                     success: function(retorno){
+                        alert(retorno);
+                    }
+                 });
+               return false;
+      });

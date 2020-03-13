@@ -16,10 +16,7 @@ $c->conectar("db_curriculo","localhost","root", "");
 </head>
 <body>
 	<form method="post">
-		começo: 
-		<input type="date" name="anoini">
-		fim:
-		<input type="date" name="anofim">
+		<input type="range" name="">
 		<input type="submit" value="aaaaaaaaaaaaaaaaaaaaaa">
 	</form>
 </body>

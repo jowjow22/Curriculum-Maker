@@ -30,7 +30,6 @@ include_once("conexao.php");
 				$dados = $sql->fetch();
 				session_start();
 				$_SESSION['cd_pessoa'] = $dados['cd_pessoa'];
-				 echo $dados['cd_pessoa']; //logado com sucesso
 			}
 			else{
 				 echo "nao logou"; //nao foi possivel logar
