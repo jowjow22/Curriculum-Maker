@@ -1,6 +1,7 @@
 <?php 
 require_once("classesPHP/conexao.php");
 require_once("classesPHP/user.php");
+require_once("classesPHP/formacao.php");
 $res='';
 $c = new Conexao;
 $c->conectar("db_curriculo","localhost","root", "");  
@@ -26,7 +27,7 @@ $f= new Formacao;
 		if ($_GET['user']=="cadastro") {
 			if ($_POST) {
 				$f->cadastrar($_POST['curso'], $_POST['dt_ini'], $_POST['dt_fim'], $_POST['insti'], $_POST['desc']);
-=			}
+			}
 		}
 	}
 ?>

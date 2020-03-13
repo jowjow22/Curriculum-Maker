@@ -18,17 +18,17 @@ include_once("user.php");
 			$sql->bindValue(":af", $anoF);
 			$sql->execute();
 			if (rowCount()>0) {
-				alert("voce faz merda o dia inteiro vitinho");
+				echo "aaaaaaaaaaaa";
 			}
 			else{
 				$sql = $pdo->prepare("INSERT into tb_formacao(nm_curso, nm_instituicao, dt_anoini, dt_anofim, ds_opcional, id_pessoa) values(:c, :i, :di, :df, :ds, :ip)");
-				$sql->bindValue(":c", $curso);
-				$sql->bindValue(":i", $insti);
-				$sql->bindValue(":di", $anoI);
-				$sql->bindValue(":df", $anoF);
-				$sql->bindValue(":ds", $desc);
-				$sql->bindValue(":ip", $cdUser);
-				$sql->execute();
+				// $sql->bindValue(":c", $curso);
+				// $sql->bindValue(":i", $insti);
+				// $sql->bindValue(":di", $anoI);
+				// $sql->bindValue(":df", $anoF);
+				// $sql->bindValue(":ds", $desc);
+				// $sql->bindValue(":ip", $cdUser);
+				// $sql->execute();
 			}
 		}
 	}

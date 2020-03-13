@@ -7,6 +7,7 @@ include_once("conexao.php");
 			$sql->bindValue(":l", $email);
 			$sql->execute();
 			if ($sql->rowCount() > 0) {
+				echo "aaaaaaaaa";
 				return false;
 			}
 			else{
@@ -21,15 +22,12 @@ include_once("conexao.php");
 		}
 		public function logar($email, $password){
 			global $pdo;
-			$sql = $pdo->prepare("SELECT cd_pessoa FROM tb_pessoa WHERE nm_email = :l AND nm_password = :s");
+			$sql = $pdo->prepare('SELECT cd_pessoa FROM tb_pessoa WHERE nm_email = :l AND nm_password = :s');
 			$sql->bindValue(":l",$email);
 			$sql->bindValue(":s",md5($password));
 			$sql->execute();
 			if ($sql->rowCount() > 0) {
-				//entra no sistema
-				$dadoCD = $sql->fetch();
-				session_start();
-				$_SESSION['cd_user'] = $dadoCD['cd_pessoa'];
+				echo "aaaaaaaaaaaaaaaaaaaaa";
 				return true; //logado com sucesso
 			}
 			else{

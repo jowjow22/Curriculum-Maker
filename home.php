@@ -1,3 +1,8 @@
+<?php 
+	if ($_SESSION['cd_user']=="") {
+		echo '<script>window.location="index.php"</script>';
+	}
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
