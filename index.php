@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Navbar</title>
         <meta name="description" content="">
-        <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
         <header class="header">

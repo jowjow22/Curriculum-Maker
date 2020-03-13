@@ -1,0 +1,6 @@
+.rounded{
+	border-radius: 10px !important;
+}
+.modal::-webkit-scrollbar { 
+	display: none;
+}
