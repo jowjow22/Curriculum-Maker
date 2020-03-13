@@ -6,8 +6,6 @@
         <title>Navbar</title>
         <meta name="description" content="">
         <link rel="stylesheet" href="css/estilo.css">
-<!--         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"> -->
-<!--         <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet"> -->
     </head>
     <body>
         <header class="header">
@@ -106,7 +104,6 @@
         </div>
         </div>
         <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
-<!--         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script> -->
         <script type="text/javascript" src="js/script.js"></script>
     
     </body>
