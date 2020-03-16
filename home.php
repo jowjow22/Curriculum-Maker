@@ -8,10 +8,14 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+	<link rel="stylesheet" type="text/css" href="materialize/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="stepperPlugin/css/mstepper.min.css">
+
 </head>
 <body>
-	<div class="container">
 			FORMACAO
 		<form method="post" id="form-formacao">
 			curso ou ensino:
@@ -23,7 +27,7 @@ session_start();
 			ANO de finalizaçao
 			<input type="number" maxlength="4" name="dt_fim">
 			descricao(opcionao)
-			<input type="text" name="desc">
+			<textarea name="desc"></textarea>
 			<input type="submit" value="enviar">
 		</form><hr>
 			EXPERIENCIA
@@ -62,8 +66,11 @@ session_start();
 				echo $tel;
 			 ?>	
 		</form>
-	</div>
+
+  <!-- *****MODALS END****** -->
 	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	<script type="text/javascript" src="stepperPlugin/js/mstepper.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
