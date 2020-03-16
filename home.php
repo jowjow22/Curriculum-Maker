@@ -70,8 +70,9 @@ session_start();
   <!-- *****MODALS END****** -->
 	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
 	<script type="text/javascript" src="stepperPlugin/js/mstepper.min.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/home.js"></script>
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
   	<script type="text/javascript" src="http://code.jquery.com/qunit/qunit-1.11.0.js"></script>
