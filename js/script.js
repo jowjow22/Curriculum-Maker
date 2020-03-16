@@ -73,3 +73,27 @@
                  });
                return false;
       });
+     $(document).on('submit','#form-hab',function(){
+                var dados = $(this).serialize();
+                $.ajax({
+                     type: 'POST',
+                     url: 'request.php?hab=cadastro',
+                     data: dados,
+                     success: function(retorno){
+                        alert(retorno);
+                    }
+                 });
+               return false;
+      });
+     $(document).on('submit','#form-ref',function(){
+                var dados = $(this).serialize();
+                $.ajax({
+                     type: 'POST',
+                     url: 'request.php?ref=cadastro',
+                     data: dados,
+                     success: function(retorno){
+                        alert(retorno);
+                    }
+                 });
+               return false;
+      });

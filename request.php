@@ -3,11 +3,15 @@ require_once("classesPHP/conexao.php");
 require_once("classesPHP/user.php");
 require_once("classesPHP/formacao.php");
 require_once("classesPHP/experiencia.php");
+require_once("classesPHP/habilidade.php");
+require_once("classesPHP/referencia.php");
 $c = new Conexao;
 $c->conectar("db_curriculo","localhost","root", "");  
 $u = new User;
 $f= new Formacao;
 $e= new Experiencia;
+$h= new Habilidade;
+$r= new Referencia;
     
 	if (isset($_GET['user'])) {
 		if ($_GET['user']=="cadastro") {
@@ -35,6 +39,23 @@ $e= new Experiencia;
 		if ($_GET['exp']=="cadastro") {
 			if ($_POST) {
 				$e->cadastrar($_POST['nm_exp'], $_POST['empresa'], $_POST['dt_ini'] ,$_POST['dt_fim'] , $_POST['descr']);
+			}
+		}
+	}
+	else if(isset($_GET['hab'])){
+		if ($_GET['hab']=="cadastro") {
+			if ($_POST) {
+				$h->cadastrar($_POST['nome'], $_POST['quali']);
+			}
+		}
+	}
+	else if(isset($_GET['ref'])){
+		if ($_GET['ref']=="cadastro") {
+			if ($_POST) {
+				$telefone = (string) $_POST['telefone'];
+				$r->cadastrar($_POST['nome'], $telefone, $_POST['profissao']);
+				$tel = $telefone;
+				echo  $telefone;
 			}
 		}
 	}
