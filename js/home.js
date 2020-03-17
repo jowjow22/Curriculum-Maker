@@ -1,4 +1,37 @@
-
+//SIDENAV
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+  var collapsibleElem = document.querySelector('.collapsible');
+  var collapsibleInstance = M.Collapsible.init(collapsibleElem);
+//MODALS SIDENAV
+  $(document).ready(function(){
+    $('.modal1').modal();
+  });
+  $(document).ready(function(){
+    $('.modal2').modal();
+  });
+    $(document).ready(function(){
+    $('.modal3').modal();
+  });
+//STEPPERS
+   var stepper1 = document.querySelector('.stepper1');
+   var stepperFormacao = new MStepper(stepper1, {
+      // options
+      firstActive: 0 // this is the default
+   });
+   var stepper2 = document.querySelector('.stepper2');
+   var stepperInstace2 = new MStepper(stepper2, {
+      // options
+      firstActive: 0 // this is the default
+   });
+     $(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });
+    $(".add").click(function(){
+      stepperFormacao.openStep(0);
+    });
+//backend//
  $(document).on('submit','#form-formacao',function(){
                 var dados = $(this).serialize();
                 $.ajax({
@@ -47,18 +80,3 @@
                  });
                return false;
       });
- //SIDENAV
-      $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-//MODALS SIDENAV
-  $(document).ready(function(){
-    $('.modal1').modal();
-  });
-//STEPPERS
-   var stepper = document.querySelector('.stepper');
-   var stepperInstace = new MStepper(stepper, {
-      // options
-      firstActive: 0 // this is the default;
-   });
-//BAckENd
