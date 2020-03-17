@@ -7,8 +7,7 @@ include_once("conexao.php");
 			$sql->bindValue(":l", $email);
 			$sql->execute();
 			if ($sql->rowCount() > 0) {
-				echo "aaaaaaaaa";
-				return false;
+				echo 0;
 			}
 			else{
 			$sql= $pdo->prepare('INSERT into tb_pessoa (cd_pessoa, nm_nome, nm_email,nm_password,dt_nascimento) values(null,:nm,:ema,:pass,:dt)');
@@ -17,7 +16,7 @@ include_once("conexao.php");
 			$sql->bindValue(":pass",md5($password));
 			$sql->bindValue(":dt",$nascimento);
 			$sql->execute();
-				return true;
+				echo 1;
 			}
 		}
 		public function logar($email, $password){
@@ -27,12 +26,14 @@ include_once("conexao.php");
 			$sql->bindValue(":s",md5($password));
 			$sql->execute();
 			if ($sql->rowCount() > 0) {
-				$dados = $sql->fetch();
+				session_destroy();
 				session_start();
+				$dados = $sql->fetch();
 				$_SESSION['cd_pessoa'] = $dados['cd_pessoa'];
+				echo 1;
 			}
 			else{
-				 echo "nao logou"; //nao foi possivel logar
+				 echo 0; //nao foi possivel logar
 			}
 		}
 	}

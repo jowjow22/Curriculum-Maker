@@ -1,3 +1,8 @@
+<?php 
+    if (isset($_SESSION['cd_pessoa'])) {
+        session_destroy();
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -75,9 +80,9 @@
             <a class="modal-close" data-toggle="modal" data-dismiss>&times;</a>
         	<h1>Pré-Cadastro</h1>
             <label>Nome:</label>
-        	<input type="text" name="name">
+        	<input type="text" name="name" required>
             <label>email:</label>
-        	<input type="email" name="email">
+        	<input type="email" name="email" required>
             <label>senha:</label>
         	<input type="password" name="password">
             <label>confirmar 
@@ -102,6 +107,9 @@
             <input class="form-btn" type="submit" name="">
             </form>
         </div>
+        </div>
+        <div class="msg">
+            <h3></h3>
         </div>
         <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script>

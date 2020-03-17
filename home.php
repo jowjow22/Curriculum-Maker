@@ -1,9 +1,9 @@
 <?php 
 session_start();
 	if (!isset($_SESSION['cd_pessoa'])) {
+		session_destroy();
 		echo '<script>window.location="index.php"</script>';
 	}
-	$tel ="";
  ?>
 <!DOCTYPE html>
 <html>
@@ -23,9 +23,9 @@ session_start();
 			instituicao de ensino:
 			<input type="text" name="insti">
 			ANO de inicio
-			<input type="number" maxlength="4" name="dt_ini">
+			<input type="text" maxlength="4" name="dt_ini" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
 			ANO de finalizaçao
-			<input type="number" maxlength="4" name="dt_fim">
+			<input type="text" maxlength="4" name="dt_fim" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
 			descricao(opcionao)
 			<textarea name="desc"></textarea>
 			<input type="submit" value="enviar">
