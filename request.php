@@ -16,7 +16,7 @@ $r= new Referencia;
 	if (isset($_GET['user'])) {
 		if ($_GET['user']=="cadastro") {
 			if ($_POST) {
-		        if ($_POST['password'] == $_POST['passwordconf']) {
+		        if (!empty($_POST['password']) && $_POST['password'] == $_POST['passwordconf']) {
 		            $u->cadastrar($_POST['name'], $_POST['email'], $_POST['password'], $_POST['nascimento']);
 		            
 		        }
@@ -53,9 +53,7 @@ $r= new Referencia;
 		if ($_GET['ref']=="cadastro") {
 			if ($_POST) {
 				$telefone = (string) $_POST['telefone'];
-				$r->cadastrar($_POST['nome'], $telefone, $_POST['profissao']);
-				$tel = $telefone;
-				echo  $telefone;
+				$r->cadastrar($_POST['nome'], $telefone, $_POST['cargo'], $_POST['inst']);
 			}
 		}
 	}

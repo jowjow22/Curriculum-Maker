@@ -20,8 +20,7 @@ include_once("user.php");
 			$sql->execute();
 
 			if ($sql->rowCount()>0) {
-				echo "aaaaaaaaaaaa";
-				return true;
+				echo 0;
 			}
 			
 			else{
@@ -33,7 +32,7 @@ include_once("user.php");
 				$sql->bindValue(":ds", $desc);
 				$sql->bindValue(":ip", $cdUser);
 				$sql->execute();
-				return false;
+				echo 1;
 			}
 		}
 	}

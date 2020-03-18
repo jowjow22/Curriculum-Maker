@@ -55,6 +55,8 @@
      });
 
      $(document).on('submit','#form-login',function(){
+                $(".msg").removeClass("msg-error");
+                $(".msg").removeClass("msg-success");
                 var dados = $(this).serialize();
                 $.ajax({
                      type: 'POST',

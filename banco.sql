@@ -39,7 +39,8 @@ foreign key(id_pessoa)references tb_pessoa(cd_pessoa)
 create table tb_ref(
 cd_ref int(6)auto_increment primary key not null,
 nm_ref varchar(80)not null, 
-nm_profissao varchar(80)not null,
+nm_cargo varchar(80)not null,
+nm_inst varchar(150) not null,
 nr_telefone varchar(20)not null,
 id_pessoa int(5)not null, 
 foreign key(id_pessoa)references tb_pessoa(cd_pessoa)

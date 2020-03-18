@@ -20,8 +20,7 @@ include_once("user.php");
 			$sql->execute();
 
 			if ($sql->rowCount()>0) {
-				echo "aaaaaaaaaaaa";
-				return true;
+				echo 0;
 			}
 			
 			else{
@@ -30,7 +29,7 @@ include_once("user.php");
 				$sql->bindValue(":qt", $quali);
 				$sql->bindValue(":id", $cdUser);
 				$sql->execute();
-				return false;
+				echo 1;
 			}
 		}
 	}

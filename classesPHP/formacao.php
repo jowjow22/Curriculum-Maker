@@ -20,8 +20,7 @@ include_once("user.php");
 			$sql->bindValue(":af", $anoF);
 			$sql->execute();
 			if ($sql->rowCount()>0) {
-				echo "aaaaaaaaaaaa";
-				return true;
+				echo 0;
 			}
 			else{
 				$sql = $pdo->prepare("INSERT into tb_formacao(nm_curso, nm_instituicao, dt_anoini, dt_anofim, ds_opcional, id_pessoa) values(:c, :i, :di, :df, :ds, :ip)");
@@ -32,7 +31,7 @@ include_once("user.php");
 				$sql->bindValue(":ds", $desc);
 				$sql->bindValue(":ip", $cdUser);
 				$sql->execute();
-				return false;
+				echo 1;
 			}
 		}
 	}

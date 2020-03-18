@@ -4,7 +4,7 @@ include_once("user.php");
 
 	class Referencia 
 	{
-		public function cadastrar($nome, $telefone, $profissao)
+		public function cadastrar($nome, $telefone, $cargo, $inst)
 		{
 			global $pdo;
 			$sql= $pdo->prepare("SELECT cd_pessoa from tb_pessoa where cd_pessoa=:cd");
@@ -19,18 +19,18 @@ include_once("user.php");
 			$sql->execute();
 
 			if ($sql->rowCount()>0) {
-				echo "aaaaaaaaaaaa";
-				return true;
+				echo 0;
 			}
 			
 			else{
-				$sql = $pdo->prepare("INSERT into tb_ref(nm_ref,nm_profissao, nr_telefone, id_pessoa) values(:n, :pf, :tl, :id)");
+				$sql = $pdo->prepare("INSERT into tb_ref(nm_ref, nm_cargo, nm_inst, nr_telefone, id_pessoa) values(:n, :car, :ins, :tl, :id)");
 				$sql->bindValue(":n", $nome);
-				$sql->bindValue(":pf", $profissao);
+				$sql->bindValue(":car", $cargo);
+				$sql->bindValue(":ins", $inst);
 				$sql->bindValue(":tl", $telefone);
 				$sql->bindValue(":id", $cdUser);
 				$sql->execute();
-				return false;
+				echo 1;
 			}
 		}
 	}
