@@ -36,3 +36,10 @@ nav ul a{
 nav ul a:hover {
   background-color: rgba(0, 0, 0, .1) !important;
 }
+.dropdown-content {
+  width: 200px !important;
+}
+.sair:hover{
+	background-color: rgba(255, 107, 129, .8) !important;
+	color: white !important;
+}

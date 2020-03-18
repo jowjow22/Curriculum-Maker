@@ -16,6 +16,12 @@ session_start();
 
 </head>
 <body>
+	<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">Perfil<i class="material-icons">assignment_ind</i></a></li>
+  <li><a href="#!">FeedBack <i class="material-icons">feedback</i></a></li>
+  <li class="divider"></li>
+  <li><a class="sair">Sair<i class="material-icons">power_settings_new</i></a></li>
+</ul>
 	  <nav class="white">
     <div class="nav-wrapper">
       <a class="brand-logo">
@@ -33,7 +39,7 @@ session_start();
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 		<li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
         <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
-        <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+        <li><a class="dropdown-trigger" data-target="dropdown1"><i class="material-icons">more_vert</i></a></li>
       </ul>
     </div>
   </nav>

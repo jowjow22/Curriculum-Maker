@@ -2,6 +2,9 @@
   $(document).ready(function(){
     $('.sidenav').sidenav();
   });
+  $(".dropdown-trigger").dropdown({
+    coverTrigger: false
+  });
   var collapsibleElem = document.querySelector('.collapsible');
   var collapsibleInstance = M.Collapsible.init(collapsibleElem);
 //MODALS SIDENAV
