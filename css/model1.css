@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+body{
+	padding: 0;
+	background-color: #fff;
+	margin: 0;
+	font-family: 'Noto Sans', sans-serif;
+}
+.row{
+	height: 101.4vh !important;
+}
+.user-img img{
+	max-width: 100%;
+}
+.basic-info{
+	padding: 60px 40px;
+}
+.basic-info .name{
+	color: white;
+}
+.basic-info .name h1,.basic-info .name h2{
+	margin-bottom: 0;
+	line-height: 1 !important;
+}
+.basic-info .name h1
+{
+	font-size: 50pt;
+	font-weight: all;
+}
+.basic-info .name h2{
+	font-size: 45pt;
+	font-weight: lighter;
+}
+.basic-info .name h5{
+	font-weight: normal;
+}
+.objetivo{
+	color: #fff;
+}
+.objetivo h2, .contato h2{
+	color: #00a8ff;
+}
+.no-padding{
+	padding: 0 0 !important;
+}
+.contato ul{
+	padding: 0;
+	list-style: none;
+	color: white;
+
+}
+.c-Lblue{
+	color:#00a8ff;
+}
+.c-white{
+	color: #fff;
+}
+.contato ul li{
+	margin: 5px 0px;
+	font-size: 12pt;
+
+}
+.contato ul li a{
+	color: white;
+	text-decoration: none;
+}
+.contato ul li a p{
+	margin-left: 27px;
+}
+.contato ul li svg{
+	margin-right: 15px;
+	color:#00a8ff ;
+}
+.refs{
+	margin-bottom: 10px;
+}
+.refs h5{
+	font-size: 20pt;
+	font-style: italic;
+}
+.ref-info{
+	font-size: 15pt;
+}
+.ref-info p, .ref-info h5{
+	margin-bottom: 0 !important;
+}
+.p40{
+	background-color: #e9e9eb;
+	padding: 100px 0;
+	padding-left: 60px !important;
+	padding-right: 70px !important;
+}
+.ref-info .info-numb{
+	color: #ccc;
+}
+.icon-revest{
+	margin-right: 0;
+	text-align: center;
+	color: white;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 50%;
+	background: #00a8ff;
+}
+.title{
+	height: 50px;
+	margin-top: 20px;
+}
+.title h5{
+	position: relative;
+	bottom: 42px;
+	left: 50px;
+	font-size: 25pt;
+	font-weight: normal;
+}
+.divider{
+	position: relative;
+	bottom: 10px;
+	background-color: #bcbcbc !important;
+	width: 92% !important;
+	margin-left: auto;
+	height: 0.8px;
+}
+ul.timeline {
+    list-style-type: none;
+    margin-left: 80px;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > div > a{
+	text-decoration: none;
+	color: #00a8ff;
+}
+ul.timeline > div > li {
+    margin: -10px 0;
+    padding-left: 20px;
+}
+ul.timeline > div > li a{
+	font-weight: bold;
+	text-decoration: none;
+	color: #00a8ff;
+}
+ul.timeline > div > li:before {
+    content: ' ';
+    background: #00a8ff;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    left: 25px;
+    width: 10px;
+    height: 10px;
+    z-index: 400;
+}
+.date{
+	position: relative;
+	top:6px;
+	left: -110px;
+}
+.progress{
+	height: 4px !important;
+	border-radius: 50px !important;
+	background-color: #cbcbcb !important;
+}
+.hab{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 50px 40px;
+	max-width: 100%;
+	margin: 0 auto;
+	max-height: 400px;
+	overflow: hidden;
+}
+.hab .hab-bar{
+	flex: 1 1 40%;
+	margin-left: 10%;
+	margin-top: 20px;
+}
+.progress > .progress-bar{
+	font-size: 7pt;
+	background-color: #00a8ff !important;
+}

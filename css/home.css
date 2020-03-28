@@ -43,3 +43,18 @@ nav ul a:hover {
 	background-color: rgba(255, 107, 129, .8) !important;
 	color: white !important;
 }
+.flex-row{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.flex-row > div{
+  flex: 1 1 200px;
+  margin: 40px 40px;
+}
+.a4{
+ width: 400px;
+ height: 510px;
+ background-color: #000;
+}

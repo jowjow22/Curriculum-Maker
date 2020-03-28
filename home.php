@@ -338,11 +338,65 @@ session_start();
     </div>
   </div>
   <!-- *****MODALS END****** -->
+<div class="flex-row">
+	<div class="a4">
+		
+	</div>
+		<div class="a4">
+		
+	</div>
+		<div class="a4">
+		
+	</div>
+<!--     <div>
+      <div class="card hoverable">
+        <div class="card-image">
+          <img src="img/office.jpg">
+          <span class="card-title">Card Title</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card hoverable">
+        <div class="card-image">
+          <img src="img/office.jpg">
+          <span class="card-title">Card Title</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+      <div class="card hoverable">
+        <div class="card-image">
+          <img src="img/office.jpg">
+          <span class="card-title">Card Title</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+
+
+
+
 
     	<div class="msg">
             <h6></h6>
         </div>
-
 	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 	<script type="text/javascript" src="stepperPlugin/js/mstepper.min.js"></script>
