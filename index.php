@@ -81,6 +81,8 @@
         	<h1>Pré-Cadastro</h1>
             <label>Nome:</label>
         	<input type="text" name="name" required>
+            <label>Sobrenome:</label>
+            <input type="text" name="sobrenome" required>
             <label>email:</label>
         	<input type="email" name="email" required>
             <label>senha:</label>

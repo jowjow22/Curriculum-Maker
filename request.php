@@ -17,7 +17,7 @@ $r= new Referencia;
 		if ($_GET['user']=="cadastro") {
 			if ($_POST) {
 		        if (!empty($_POST['password']) && $_POST['password'] == $_POST['passwordconf']) {
-		            $u->cadastrar($_POST['name'], $_POST['email'], $_POST['password'], $_POST['nascimento']);
+		            $u->cadastrar($_POST['name'],$_POST['sobrenome'], $_POST['email'], $_POST['password'], $_POST['nascimento']);
 		            
 		        }
 		    }
