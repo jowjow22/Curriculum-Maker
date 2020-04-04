@@ -5,6 +5,8 @@ use db_curriculo;
 create table tb_pessoa(
 cd_pessoa int(5)auto_increment not null primary key,
 nm_nome varchar(70)not null,
+nm_sobrenome varchar(70) not null,
+img_foto varchar(255),
 nm_profissao varchar(40),
 ds_objetivo longtext,
 nm_email varchar(125)not null,
@@ -52,3 +54,9 @@ qt_hab int(3)not null,
 id_pessoa int(5)not null, 
 foreign key(id_pessoa)references tb_pessoa(cd_pessoa)
 );   
+create table tb_curriculo(
+cd_curriculo int not null auto_increment primary key,
+nm_curriculo varchar(255) not null,
+nm_route varchar(255) not null
+);
+select img_foto, nm_profissao, ds_objetivo, nr_telefone, url_website, ds_endereco from tb_pessoa where cd_pessoa = 1;
