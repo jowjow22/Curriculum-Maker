@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 body{
-	background-color: #f5f7fa;
+  background-color: #f5f7fa;
+    font-family: 'Noto Sans', sans-serif;
 }
 .rounded{
-	border-radius: 10px !important;
+  border-radius: 10px !important;
 }
 .modal::-webkit-scrollbar { 
-	display: none;
+  display: none;
 }
 .msg{
   display: none;
@@ -28,10 +30,10 @@ body{
   box-shadow: 0px 0px 40px #ff7675;
 }
 nav .brand-logo{
-	padding: 0 20px !important;
+  padding: 0 20px !important;
 }
 nav ul a{
-	color: #576784 !important;
+  color: #576784 !important;
 }
 nav ul a:hover {
   background-color: rgba(0, 0, 0, .1) !important;
@@ -40,8 +42,8 @@ nav ul a:hover {
   width: 200px !important;
 }
 .sair:hover{
-	background-color: rgba(255, 107, 129, .8) !important;
-	color: white !important;
+  background-color: rgba(255, 107, 129, .8) !important;
+  color: white !important;
 }
 .flex-row{
   display: flex;
@@ -57,4 +59,90 @@ nav ul a:hover {
  width: 400px;
  height: 510px;
  background-color: #000;
+}
+
+
+
+.card {
+  overflow: visible;
+}
+.profile-pic {
+  margin-top: -60%;
+  z-index: 1;
+  position: relative;
+  border-radius: 50%;
+}
+
+.profile-pic > img {
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.4), 0 2px 20px 0 rgba(0, 0, 0, 0.42);
+}
+.card-image{
+  max-height: 400px;
+  overflow: hidden;
+}
+.controls {
+  cursor: pointer;
+}
+
+.row-menu{
+  position:relative;
+}
+
+.menu {
+  display:none;
+  right: 1em;
+  top: 1.8em;
+  position: absolute;
+  background-color: #fff;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.menu-list > li {
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.menu-list > li:last-child{
+   margin-bottom: -1em;
+}
+.card-title{
+  font-size: 40pt !important;
+}
+.card .card-content .card-title{
+  line-height: 50px !important;
+}
+/*.profile-pic:after{
+  content: '';
+  position: absolute;
+  left: 18%;
+  top: 0%;
+  background: #000;
+  width: 62%;
+  height: 95%;
+  border-radius: 50%;
+}*/
+.profile-pic:after{
+  display: none;
+  content: 'Trocar Foto';
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20pt;
+  line-height: 19;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -.05%;
+  top: -0.9%;
+  background: rgba(0, 0, 0, .8);
+  border-radius: 50%;
+
+}
+.dropdown-trigger2{
+  cursor: pointer !important;
+}
+#dropdown2{
+  width: 300px !important;
 }

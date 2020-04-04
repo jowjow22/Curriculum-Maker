@@ -5,8 +5,23 @@
   $(".dropdown-trigger").dropdown({
     coverTrigger: false
   });
+  $(".dropdown-trigger2").dropdown({
+    coverTrigger: true
+  });
   var collapsibleElem = document.querySelector('.collapsible');
   var collapsibleInstance = M.Collapsible.init(collapsibleElem);
+//ACTION
+$(".perfil-target").click(function(){
+  $(".flex-row").hide();
+  $(".perfil").show();
+});  
+$(".cards-target").click(function(){
+  $(".flex-row").show();
+  $(".perfil").hide();
+})
+$(".refresh").click(function(){
+  location.reload(true);
+});
 //MODALS SIDENAV
   $(document).ready(function(){
     $('.modal1').modal();

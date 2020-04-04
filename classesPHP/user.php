@@ -1,7 +1,7 @@
 <?php 
 include_once("conexao.php");
 	class User{
-		public function cadastrar($nome, $email, $password, $nascimento){
+		public function cadastrar($nome, $sobrenome, $email, $password, $nascimento){
 			global $pdo;
 			$sql= $pdo->prepare('SELECT cd_pessoa from tb_pessoa where nm_email= :l');
 			$sql->bindValue(":l", $email);
@@ -10,8 +10,9 @@ include_once("conexao.php");
 				echo 0;
 			}
 			else{
-			$sql= $pdo->prepare('INSERT into tb_pessoa (cd_pessoa, nm_nome, nm_email,nm_password,dt_nascimento) values(null,:nm,:ema,:pass,:dt)');
+			$sql= $pdo->prepare('INSERT into tb_pessoa (cd_pessoa, nm_nome, nm_sobrenome, nm_email,nm_password,dt_nascimento) values(null,:nm,:snm,:ema,:pass,:dt)');
 			$sql->bindValue(":nm",$nome);
+			$sql->bindValue(":snm",$sobrenome);
 			$sql->bindValue(":ema",$email);
 			$sql->bindValue(":pass",md5($password));
 			$sql->bindValue(":dt",$nascimento);
@@ -20,8 +21,7 @@ include_once("conexao.php");
 			}
 		}
 		public function logar($email, $password){
-
-
+			global $pdo;
 			$sql = $pdo->prepare('SELECT cd_pessoa FROM tb_pessoa WHERE nm_email = :l AND nm_password = :s');
 			$sql->bindValue(":l",$email);
 			$sql->bindValue(":s",md5($password));
@@ -35,6 +35,50 @@ include_once("conexao.php");
 			}
 			else{
 				 echo 0; //nao foi possivel logar
+			}
+		}
+		public function verificarCadastro($id){
+			global $pdo;
+			$sql = $pdo->prepare('SELECT img_foto, nm_profissao, ds_objetivo, nr_telefone, url_website, ds_endereco FROM tb_pessoa WHERE cd_pessoa = :id');
+			$sql->bindValue(":id",$id);
+			$sql->execute();
+			$data = $sql->fetch();
+			if(empty($data['img_foto']) || empty($data['nm_profissao']) || empty($data['ds_objetivo']) || empty($data['nr_telefone']) || empty($data['url_website']) || empty($data['ds_endereco'])){
+				echo 1;
+			}
+			else{
+				echo 0;
+			}
+		}
+		public function selUserData($id){
+			global $pdo;
+			if (!empty($id)) {
+			$sql = $pdo->prepare('SELECT * FROM tb_pessoa WHERE cd_pessoa = :id');
+			$sql->bindValue(":id", $id);
+			$sql->execute();
+			}
+			else{
+			$sql = $pdo->prepare('SELECT * FROM tb_pessoa');
+			$sql->execute();
+			}
+			return $sql;
+		}
+		public function updateData($id, $img, $email, $profissao, $objetivo, $telefone, $website, $endereco){
+			global $pdo;
+			$sql = $pdo->prepare('SELECT img_foto, nm_email, nm_profissao, ds_objetivo, nr_telefone, url_website, ds_endereco FROM tb_pessoa WHERE cd_pessoa = :id');
+			$sql->bindValue(":id", $id);
+			$sql->execute();
+
+			if ($_POST) {
+			$sql = $pdo->prepare('UPDATE tb_pessoa SET img_foto = :img, nm_email = :em, nm_profissao = :prof, ds_objetivo = :obj, nr_telefone = :tel, url_website = :site, ds_endereco = :en ');
+			$sql->bindValue(":img", $img);
+			$sql->bindValue(":em", $email);
+			$sql->bindValue(":prof", $profissao);
+			$sql->bindValue(":obj", $objetivo);
+			$sql->bindValue(":tel", $telefone);
+			$sql->bindValue(":site", $website);
+			$sql->bindValue(":en", $endereco);
+			$sql->execute();
 			}
 		}
 		public function atualizarTel($telefone){
