@@ -193,4 +193,19 @@ $(".refresh").click(function(){
                  });
                return false;
       });
-     
+     $(document).ready(function(){
+          alert();
+        $.ajax({
+          type: 'POST',
+          url:'request.php?user=check',
+          success: function(retorno){
+              if (retorno==1) {
+                  alert("tem que terminar o cadastro ai pilantra");
+              }
+              else{
+                alert("ou nao, como sempre");
+              }
+          }
+        });
+     });
+

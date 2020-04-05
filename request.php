@@ -27,6 +27,9 @@ $r= new Referencia;
 		        $u->logar($_POST['email'], $_POST['password']);	           
 		    }
 		}
+		if ($_GET['user']=="check") {
+			$u->verificarCadastro($_SESSION['cd_pessoa']);
+		}
 	}
 	else if(isset($_GET['formacao'])){
 		if ($_GET['formacao']=="cadastro") {
