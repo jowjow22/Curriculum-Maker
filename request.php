@@ -22,6 +22,42 @@ $r= new Referencia;
 		        }
 		    }
 		}
+		if ($_GET['user']=="update") {
+			if ($_POST) {
+				echo '<script>alert("adasdasdasds");</script>';
+				$pastaPerfil = "img/users/perfil";
+				$pastaCapa = "img/users/capa";
+				$tempPerfil = $_FILES['foto-perfil']['temp_name'];
+				$tempCapa = $_FILES['foto-capa']['temp_name'];
+				$newnamePerfil = uniqid().".$extensaoPerfil";
+				$newnameCapa = uniqid().".$extensaoPerfil";
+				$formatosPermitidos = array("png", "jpeg", "jpg");
+				$extensaoPerfil = pathinfo($_FILES['foto-perfil']['name'], PATHINFO_EXTENSION);
+				$extensaoCapa = pathinfo($_FILES['foto-capa']['name'], PATHINFO_EXTENSION);
+				if (in_array($extensaoPerfil, $formatosPermitidos)) {
+				if (move_uploaded_file($temp, $pastaPerfil.$newnamePerfil) && move_uploaded_file($temp, $pastaCapa.$newnameCapa)) {
+						if (!empty($pastaPerfil.$newnamePerfil)&&
+							!empty($pastaCapa.$newnameCapa)&&
+							!empty($_POST['telefone'])&&
+							!empty($_POST['site'])&&
+							!empty($_POST['profissao'])&&
+							!empty($_POST['endereco'])&&
+							!empty($_POST['objetivo'])) {
+							$u->updateData($_SESSION['cd_pessoa'], $pastaPerfil.$newnamePerfil,  $pastaCapa.$newnameCapa, $_POST['profissao'], $_POST['objetivo'], $_POST['telefone'], $_POST['site'], $_POST['endereco']);
+
+						}
+					}
+				}
+			}
+		}
+
+
+
+
+					
+		// 		}
+		// 	}
+		// }
 		if ($_GET['user']=="login") {
 			if ($_POST) {
 		        $u->logar($_POST['email'], $_POST['password']);	           

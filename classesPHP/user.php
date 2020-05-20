@@ -33,7 +33,7 @@ include_once("conexao.php");
 				$_SESSION['cd_pessoa'] = $dados['cd_pessoa'];
 				echo 1;
 			}
-			else{
+			 else{
 				 echo 0; //nao foi possivel logar
 			}
 		}
@@ -63,15 +63,13 @@ include_once("conexao.php");
 			}
 			return $sql;
 		}
-		public function updateData($id, $img, $email, $profissao, $objetivo, $telefone, $website, $endereco){
+		public function updateData($id, $imgP, $imgC, $profissao, $objetivo, $telefone, $website, $endereco){
 			global $pdo;
-			$sql = $pdo->prepare('SELECT img_foto, nm_email, nm_profissao, ds_objetivo, nr_telefone, url_website, ds_endereco FROM tb_pessoa WHERE cd_pessoa = :id');
+			try{
+			$sql = $pdo->prepare('UPDATE tb_pessoa SET img_fotoPerfil = :imgP,img_fotoCapa = :imgC, nm_email = :em, nm_profissao = :prof, ds_objetivo = :obj, nr_telefone = :tel, url_website = :site, ds_endereco = :en WHERE cd_pessoa = :id');
 			$sql->bindValue(":id", $id);
-			$sql->execute();
-
-			if ($_POST) {
-			$sql = $pdo->prepare('UPDATE tb_pessoa SET img_foto = :img, nm_email = :em, nm_profissao = :prof, ds_objetivo = :obj, nr_telefone = :tel, url_website = :site, ds_endereco = :en ');
-			$sql->bindValue(":img", $img);
+			$sql->bindValue(":imgP", $imgP);
+			$sql->bindValue(":imgC", $imgC);
 			$sql->bindValue(":em", $email);
 			$sql->bindValue(":prof", $profissao);
 			$sql->bindValue(":obj", $objetivo);
@@ -79,7 +77,11 @@ include_once("conexao.php");
 			$sql->bindValue(":site", $website);
 			$sql->bindValue(":en", $endereco);
 			$sql->execute();
-			}
+		}
+		catch(Exception $e)
+		{
+   		 echo $e->getMessage();
+		}
 		}
 		public function atualizarTel($telefone){
 			global $pdo;

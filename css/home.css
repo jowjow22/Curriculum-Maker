@@ -6,6 +6,9 @@ body{
 .rounded{
   border-radius: 10px !important;
 }
+.modal5{
+  width: 70% !important;
+}
 .modal::-webkit-scrollbar { 
   display: none;
 }
@@ -29,6 +32,13 @@ body{
   background: #d63031;
   box-shadow: 0px 0px 40px #ff7675;
 }
+.msg-warning{
+  background: #fed330;
+  box-shadow: 0px 0px 40px #fffa65;
+}
+.t20{
+  top: 20% !important;
+}
 nav .brand-logo{
   padding: 0 20px !important;
 }
@@ -48,17 +58,15 @@ nav ul a:hover {
 .flex-row{
   display: flex;
   flex-wrap: wrap;
-  max-width: 1300px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .flex-row > div{
   flex: 1 1 200px;
   margin: 40px 40px;
 }
-.a4{
- width: 400px;
- height: 510px;
- background-color: #000;
+.perfil{
+  display: none;
 }
 
 
@@ -76,8 +84,8 @@ nav ul a:hover {
 .profile-pic > img {
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.4), 0 2px 20px 0 rgba(0, 0, 0, 0.42);
 }
-.card-image{
-  max-height: 400px;
+.perfil-background{
+  max-height: 600px;
   overflow: hidden;
 }
 .controls {
@@ -107,7 +115,7 @@ nav ul a:hover {
 .menu-list > li:last-child{
    margin-bottom: -1em;
 }
-.card-title{
+.nome{
   font-size: 40pt !important;
 }
 .card .card-content .card-title{

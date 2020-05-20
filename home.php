@@ -16,8 +16,11 @@ session_start();
 
 </head>
 <body>
+	    	<div class="msg">
+            <h6></h6>
+        </div>
 <ul id="dropdown1" class="dropdown-content">
-  <li><a class="perfil-target">Perfil<i class="material-icons">assignment_ind</i></a></li>
+  <li><a class="confirmed perfil-target">Perfil<i class="material-icons">assignment_ind</i></a></li>
   <li><a href="#!">FeedBack <i class="material-icons">feedback</i></a></li>
   <li class="divider"></li>
   <li><a class="sair">Sair<i class="material-icons">power_settings_new</i></a></li>
@@ -56,8 +59,8 @@ session_start();
         <img src="img/office.jpg">
       </div>
       <a href="#user"><img class="circle" src="img/madara.gif"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      <a href="#name"><span class="white-text name user-name"></span></a>
+      <a href="#email"><span class="white-text email"></span></a>
     </div></li>
     <!-- SIDENAV BODY -->
 	<li><a class="subheader"><i class="material-icons">assignment</i>Cadastro de Informações</a></li>
@@ -66,6 +69,7 @@ session_start();
     <li><a href="#modal2" class="modal-trigger waves-effect waves-dark"><i class="material-icons">work</i>Experiência</a></li>
     <li><a href="#modal3" class="modal-trigger waves-effect waves-dark"><i class="material-icons">bar_chart</i>Habilidades</a></li>
     <li><a href="#modal4" class="modal-trigger waves-effect waves-dark"><i class="material-icons">supervisor_account	</i>Referências</a></li>
+    <li><a href="#modal5" class="modal-trigger waves-effect waves-dark update"><i class="material-icons">assignment_ind</i>Atualizãção de Cadastro</a></li>
     	<li class="no-padding">
     		<ul class="collapsible collapsible-accordion">
     			<li>
@@ -123,12 +127,12 @@ session_start();
 			         
 			      	<div class="input-field">
 			      		<i class="material-icons prefix">date_range</i>
-			      		<input type="text" maxlength="4" id="dt_ini" name="dt_ini" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+			      		<input type="text" class="datepicker1" required>
 			      		<label for="dt_ini">Data de Inicio</label>
 			      	</div>
 			      	<div class="input-field">
 			      		<i class="material-icons prefix">today</i>
-			      		<input type="text" maxlength="4" id="dt_fim" name="dt_fim" onkeypress='return event.charCode >= 48 && event.charCode <= 57'   required>
+			      		<input type="text" class="datepicker2" required>
 			      		<label for="dt_ini">Data de Finalização</label>
 			      	</div>
 
@@ -337,18 +341,176 @@ session_start();
 		</form>
     </div>
   </div>
+  <!-- *****MODAL 5********* -->
+   <div id="modal5" class="modal rounded modal5">
+    <div class="modal-content">
+    	<form method="post" id="form-update" enctype="multipart/form-data">
+			<ul class="stepper stepper5 linear horizontal" style="min-height: 400px;">
+		   		<li class="step active">
+			      <div class="step-title waves-effect">Perfil</div>
+			      <div class="step-content">
+
+
+
+		            <div class="input-field">
+		              <i class="material-icons prefix">account_circle</i>
+			          <input type="text" name="nome" class="validate" id="nomeUpdate" required>
+			          <label for="nome" id="nomeL">Nome</label>
+			        </div>
+
+			        <div class="input-field">
+						<i class="material-icons prefix">account_circle</i>
+			         	<input type="text" name="sobrenome" class="validate" id="sobrenome" required>
+			          	<label for="sobrenome" id="sobrenomeL">Sobrenome</label>
+			        </div>
+
+
+
+			         <div class="step-actions">
+			            <!-- Here goes your actions buttons -->
+			            <button class="waves-effect waves-dark btn next-step">CONTINUE</button>
+			         </div>
+			      </div>
+			    </li>
+
+			   <li class="step">
+			      <div class="step-title waves-effect">Imagens</div>
+			      <div class="step-content">
+					<div class="file-field input-field">
+					      <div class="btn">
+					        <span>Foto de Perfil</span>
+					        <input type="file" name="foto-perfil">
+					      </div>
+					      <div class="file-path-wrapper">
+					        <input class="file-path validate" type="text">
+					      </div>
+					    </div>
+					<div class="file-field input-field">
+					      <div class="btn">
+					        <span>Foto de Capa</span>
+					        <input type="file" name="foto-capa">
+					      </div>
+					      <div class="file-path-wrapper">
+					        <input class="file-path validate" type="text">
+					      </div>
+					    </div>
+			         <div class="step-actions">
+			            <!-- Here goes your actions buttons -->
+			            <button type="submit" class="waves-effect waves-dark btn next-step">CONTINUE</button>
+			            <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+			         </div>
+			      </div>
+			    </li>
+
+		   		<li class="step">
+			      <div class="step-title waves-effect">Perfil</div>
+			      <div class="step-content">
+
+
+
+		            <div class="input-field">
+		              <i class="material-icons prefix">email</i>
+			          <input type="email" name="email" class="validate" id="email" required>
+			          <label for="email" id="emailL">Email</label>
+			        </div>
+
+			        <div class="input-field">
+						<i class="material-icons prefix">cake</i>
+			         	<input type="text" name="nascimento" class="validate nascimento" id="nascimento" required>
+			          	<label for="nascimento" id="nascimentoL">Nascimento</label>
+			        </div>
+
+
+
+			         <div class="step-actions">
+			            <!-- Here goes your actions buttons -->
+			            <button class="waves-effect waves-dark btn next-step">CONTINUE</button>
+			            <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+			         </div>
+			      </div>
+			    </li>
+
+		   		<li class="step">
+			      <div class="step-title waves-effect">Perfil</div>
+			      <div class="step-content">
+
+
+
+		            <div class="input-field">
+		              <i class="material-icons prefix">call</i>
+			          <input type="text" class="simple-field-data-mask-selectonfocus validate"type="text"data-mask="(00) 00000-0000" data-mask-selectonfocus="true" name="telefone" id="telefone-perfil" required>
+			          <label for="telefone-perfil" id="telefoneL">telefone</label>
+			        </div>
+
+			        <div class="input-field">
+						<i class="material-icons prefix">language</i>
+			         	<input type="text" name="site" class="validate" id="site">
+			          	<label for="site" id="siteL">Site</label>
+			        </div>
+
+
+
+			         <div class="step-actions">
+			            <!-- Here goes your actions buttons -->
+			            <button class="waves-effect waves-dark btn next-step">CONTINUE</button>
+			            <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+			         </div>
+			      </div>
+			    </li>
+
+			  <li class="step">
+			      <div class="step-title waves-effect">Perfil</div>
+			      <div class="step-content">
+
+
+
+			      	<div class="input-field">
+			      		<i class="material-icons prefix">work</i>
+			      		<input type="text" id="profissao" name="profissao"  required>
+			      		<label for="profissao" id="profissaoL">Profissão</label>
+			      	</div>
+
+			        <div class="input-field">
+						<i class="material-icons prefix">home</i>
+			         	<input type="text" name="endereco" class="validate" id="endereco">
+			          	<label for="endereco" id="enderecoL">Endereço</label>
+			        </div>
+
+
+
+			         <div class="step-actions">
+			            <!-- Here goes your actions buttons -->
+			            <button class="waves-effect waves-dark btn next-step">CONTINUE</button>
+			            <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+			         </div>
+			      </div>
+			    </li>
+
+			    <li class="step">
+			      <div class="step-title waves-effect">Informações</div>
+			      <div class="step-content">
+			      	<div class="input-field">
+			      		<i class="material-icons prefix">description</i>
+			      		<textarea class="materialize-textarea" name="objetivo" maxlength="593" id="obj"></textarea>
+			      		<label for="obj" id="objL">Objetivo</label>
+			      	</div>
+
+
+			         <div class="step-actions">
+			            <!-- Here goes your actions buttons -->
+						<button type="submit" class="waves-effect waves-dark btn  modal-close">CONCLUIR</button>
+						<button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+			         </div>
+			      </div>
+			   </li>
+
+			</ul>
+		</form>
+    </div>
+  </div>
   <!-- *****MODALS END****** -->
-<div class="flex-row">
-	<div class="a4">
-		
-	</div>
-		<div class="a4">
-		
-	</div>
-		<div class="a4">
-		
-	</div>
-<!--     <div>
+<div class="row">
+    <div class="col s4 offset-s2">
       <div class="card hoverable">
         <div class="card-image">
           <img src="img/office.jpg">
@@ -360,9 +522,8 @@ session_start();
         </div>
       </div>
     </div>
-
-    <div>
-      <div class="card hoverable">
+    <div class="col s4">
+    	 <div class="card">
         <div class="card-image">
           <img src="img/office.jpg">
           <span class="card-title">Card Title</span>
@@ -373,21 +534,6 @@ session_start();
         </div>
       </div>
     </div>
-
-
-    <div>
-      <div class="card hoverable">
-        <div class="card-image">
-          <img src="img/office.jpg">
-          <span class="card-title">Card Title</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-        </div>
-      </div>
-    </div> -->
-
   </div>
   <ul id="dropdown2" class="dropdown-content">
   <li><a class="perfil-target">Trocar foto de perfil<i class="material-icons">portrait</i></a></li>
@@ -398,8 +544,8 @@ session_start();
     <div class="row">
       <div class="col s12">
         <div class="card">
-          <div class="card-image">
-            <img src="img/background.jpg" alt="" />
+          <div class="card-image perfil-background">
+            <img src="img/madara.gif" alt="" />
           </div>
           <div class="card-content">
           	<a class="dropdown-trigger2 right grey-text text-darken-4" data-target="dropdown2"><i class="material-icons">more_vert</i></a>
@@ -411,7 +557,7 @@ session_start();
               </div>
               <div class="col s8">
               	<div class="user-infos">
-              		<h1 class="card-title black-text">Bruce Banner Wayne</h1>
+              		<h1 class="card-title black-text nome">Bruce Banner Wayne</h1>
               		<h5>Web Developer</h5>
               		<h6>17 Anos de Idade</h6>
               	</div>
@@ -426,13 +572,6 @@ session_start();
     </div>
   </div>
 </div>
-
-
-<button id="form-test">aaaaaaaaaaaa</button>
-
-    	<div class="msg">
-            <h6></h6>
-        </div>
 	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 	<script type="text/javascript" src="stepperPlugin/js/mstepper.min.js"></script>

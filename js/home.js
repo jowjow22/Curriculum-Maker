@@ -35,6 +35,24 @@ $(".refresh").click(function(){
     $(document).ready(function(){
     $('.modal4').modal();
   });
+    $(document).ready(function(){
+    $('.modal5').modal();
+  });
+    $(document).ready(function(){
+    $('.nascimento').datepicker({
+      format: "dd/mm/yyyy"
+    });
+  });
+    $(document).ready(function(){
+    $('.datepicker1').datepicker({
+      format: "yyyy"
+    });
+  });
+    $(document).ready(function(){
+    $('.datepicker2').datepicker({
+      format: "yyyy"
+    });
+  });
 //STEPPERS
    var stepper1 = document.querySelector('.stepper1');
    var stepperFormacao = new MStepper(stepper1, {
@@ -48,6 +66,11 @@ $(".refresh").click(function(){
    });
    var stepper3 = document.querySelector('.stepper3');
    var stepperRef = new MStepper(stepper3, {
+      // options
+      firstActive: 0 // this is the default
+   });
+   var stepper5 = document.querySelector('.stepper5');
+   var stepperRef = new MStepper(stepper5, {
       // options
       firstActive: 0 // this is the default
    });
@@ -194,18 +217,92 @@ $(".refresh").click(function(){
                return false;
       });
      $(document).ready(function(){
-          alert();
+      var endereco = "jsonRequests.php?data&users";
+        $.ajax({
+            url: endereco,
+            complete: function(res){
+                var userData = JSON.parse(res.responseText);
+                $(".user-name").html(userData[0].nm_nome+" "+userData[0].nm_sobrenome);
+                $(".email").html(userData[0].nm_email);
+            }
+        });  
+     });
+     $(document).ready(function(){
+     $(".msg").removeClass("msg-error");
+     $(".msg").removeClass("msg-success");
+     $(".msg").removeClass("msg-warning");
         $.ajax({
           type: 'POST',
           url:'request.php?user=check',
           success: function(retorno){
               if (retorno==1) {
-                  alert("tem que terminar o cadastro ai pilantra");
+                          $(".msg > h6").html("Termine o seu cadastro para utilizar nossas funcionalidades!");
+                          $(".msg").addClass("msg-warning t20");
+                          $(".msg").fadeIn("slow", function(){
+                          $(this).delay(3000).fadeOut("slow");
+                          });
               }
               else{
-                alert("ou nao, como sempre");
+                $(".confirmed").addClass("perfil-target");
               }
           }
         });
      });
+     $(".update").click(function(){
+              var endereco = "jsonRequests.php?data&users";
+        $.ajax({
+            url: endereco,
+            complete: function(res){
+                var userData = JSON.parse(res.responseText);
+                $("#nomeUpdate").val(userData[0].nm_nome);
+                $("#nomeL").addClass("active");
+                $("#sobrenome").val(userData[0].nm_sobrenome);
+                $("#sobrenomeL").addClass("active");
+                $("#email").val(userData[0].nm_email);
+                $("#emailL").addClass("active");
+                $("#nascimento").val(userData[0].dt_nascimento);
+                $("#nascimentoL").addClass("active");
+                $("#telefone-perfil").val(userData[0].nr_telefone);
+                $("#telefoneL").addClass("active");
+                $("#site").val(userData[0].url_website);
+                $("#siteL").addClass("active");
+                $("#profissao").val(userData[0].nm_profissao);
+                $("#profissaoL").addClass("active");
+                $("#endereco").val(userData[0].ds_endereco);
+                $("#enderecoL").addClass("active");
+                $("#obj").val(userData[0].ds_objetivo);
+                $("#objL").addClass("active");
+            }
+        });
+     });
+     $(document).on('submit','#form-update',function(){
+      var formData = new FormData(this);
+      var dados = $(this).serialize();
+      console.log(formData)
+      console.log(dados);
+        $.ajax({
+          type: 'POST',
+          url: 'request.php?user=update',
+          data: formData,
+                     success: function(retorno){
+                      console.log(retorno);
+                      alert(retorno);
+                        if (retorno == 1) {
+                          $(".msg > h6").html("CadastradO!");
+                          $(".msg").addClass("msg-success");
+                          $(".msg").fadeIn("slow", function(){
+                          $(this).delay(2000).fadeOut("slow");
+                          });
+                        }
+                        else{
+                          $(".msg > h6").html("Não foi possivel atualizar seu cadastro");
+                          $(".msg").addClass("msg-error");
+                          $(".msg").fadeIn("slow", function(){
+                          $(this).delay(2000).fadeOut("slow");
+                          });
+                        }
+                    }
+                 });
+               return false;
+        });
 

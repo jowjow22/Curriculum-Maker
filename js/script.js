@@ -58,7 +58,8 @@
                 $(".msg").removeClass("msg-error");
                 $(".msg").removeClass("msg-success");
                 var dados = $(this).serialize();
-                $.ajax({
+                console.log(dados);
+                    $.ajax({
                      type: 'POST',
                      url: 'request.php?user=login',
                      data: dados,
