@@ -12,11 +12,11 @@
   var collapsibleInstance = M.Collapsible.init(collapsibleElem);
 //ACTION
 $(".perfil-target").click(function(){
-  $(".flex-row").hide();
+  $(".operation").hide();
   $(".perfil").show();
 });  
 $(".cards-target").click(function(){
-  $(".flex-row").show();
+  $(".operation").show();
   $(".perfil").hide();
 })
 $(".refresh").click(function(){
@@ -37,6 +37,9 @@ $(".refresh").click(function(){
   });
     $(document).ready(function(){
     $('.modal5').modal();
+  });
+      $(document).ready(function(){
+    $('.modal6').modal();
   });
     $(document).ready(function(){
     $('.nascimento').datepicker({
@@ -275,27 +278,55 @@ $(".refresh").click(function(){
             }
         });
      });
-     $(document).on('submit','#form-update',function(){
-      var formData = new FormData(this);
-      var dados = $(this).serialize();
-      console.log(formData)
-      console.log(dados);
-        $.ajax({
-          type: 'POST',
-          url: 'request.php?user=update',
-          data: formData,
+//      $(document).on('submit','#form-update',function(){
+//       var dados = $(this).serialize();
+//       console.log(dados);
+//         $.ajax({
+//           type: 'POST',
+//           url: 'request.php?user=update',
+//           data: dados,
+//                      success: function(retorno){
+//                       console.log(retorno);
+//                       alert(retorno);
+//                         if (retorno == 1) {
+//                           $(".msg > h6").html("CadastradO!");
+//                           $(".msg").addClass("msg-success");
+//                           $(".msg").fadeIn("slow", function(){
+//                           $(this).delay(2000).fadeOut("slow");
+//                           });
+//                         }
+//                         else{
+//                           $(".msg > h6").html("Não foi possivel atualizar seu cadastro");
+//                           $(".msg").addClass("msg-error");
+//                           $(".msg").fadeIn("slow", function(){
+//                           $(this).delay(2000).fadeOut("slow");
+//                           });
+//                         }
+//                     }
+//                  });
+//                return false;
+//         });
+// $(".create-curriculum").click(function(){
+
+// });
+     $(document).on('submit','#form-curriculum',function(){
+                $(".msg").removeClass("msg-error");
+                $(".msg").removeClass("msg-success");
+                var dados = $(this).serialize();
+                $.ajax({
+                     type: 'POST',
+                     url: 'curriculos/teste.php?cadCurriculo',
+                     data: dados,
                      success: function(retorno){
-                      console.log(retorno);
-                      alert(retorno);
                         if (retorno == 1) {
-                          $(".msg > h6").html("CadastradO!");
+                          $(".msg > h6").html("Currículo Cadastrado!");
                           $(".msg").addClass("msg-success");
                           $(".msg").fadeIn("slow", function(){
                           $(this).delay(2000).fadeOut("slow");
                           });
                         }
                         else{
-                          $(".msg > h6").html("Não foi possivel atualizar seu cadastro");
+                          $(".msg > h6").html("Erro ao Cadastrar!");
                           $(".msg").addClass("msg-error");
                           $(".msg").fadeIn("slow", function(){
                           $(this).delay(2000).fadeOut("slow");
@@ -304,5 +335,4 @@ $(".refresh").click(function(){
                     }
                  });
                return false;
-        });
-
+      });

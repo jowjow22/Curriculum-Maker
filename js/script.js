@@ -64,6 +64,7 @@
                      url: 'request.php?user=login',
                      data: dados,
                      success: function(retorno){
+                        alert(retorno);
                         if (retorno == 1) {
                         $(".msg > h3").html("Logado com Sucesso!");
                         $(".msg").addClass("msg-success");

@@ -22,7 +22,7 @@ include_once("conexao.php");
 		}
 		public function logar($email, $password){
 			global $pdo;
-			$sql = $pdo->prepare('SELECT cd_pessoa FROM tb_pessoa WHERE nm_email = :l AND nm_password = :s');
+			$sql = $pdo->prepare('SELECT cd_pessoa, nm_nome FROM tb_pessoa WHERE nm_email = :l AND nm_password = :s');
 			$sql->bindValue(":l",$email);
 			$sql->bindValue(":s",md5($password));
 			$sql->execute();
@@ -31,6 +31,7 @@ include_once("conexao.php");
 				session_start();
 				$dados = $sql->fetch();
 				$_SESSION['cd_pessoa'] = $dados['cd_pessoa'];
+				$_SESSION['uName'] = $dados['nm_nome'];
 				echo 1;
 			}
 			 else{

@@ -154,3 +154,18 @@ nav ul a:hover {
 #dropdown2{
   width: 300px !important;
 }
+.card-image{
+
+  height: 400px !important;
+
+}
+.card{
+  min-height: 540px !important;
+}
+.card-image img{
+  min-height: 400px;
+}
+.card-image div{
+  max-height: 100% !important;
+  overflow: hidden !important;
+}

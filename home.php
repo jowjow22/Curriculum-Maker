@@ -508,29 +508,50 @@ session_start();
 		</form>
     </div>
   </div>
+  <div id="modal6" class="modal rounded modal6">
+    <div class="modal-content">
+    	<form method="post" id="form-curriculum">
+    		<h4>Criar Curriculo</h4>
+    		<div class="divider"></div>
+    			<div class="input-field">
+						<i class="material-icons prefix">description</i>
+			         	<input type="text" name="nmCurriculo" class="validate" id="nmCurriculo">
+			          	<label for="nmCurriculo">Nome do Curriculo</label>
+			        </div>
+    				<div class="right" style="margin-bottom: 15px;">
+						<button type="submit" class="waves-effect waves-dark btn  modal-close">CONCLUÍDO</button>
+    			</div>
+    		</div>
+		</form>
+    </div>
+  </div>
   <!-- *****MODALS END****** -->
-<div class="row">
+<div class="row operation">
     <div class="col s4 offset-s2">
       <div class="card hoverable">
         <div class="card-image">
-          <img src="img/office.jpg">
-          <span class="card-title">Card Title</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        	<div>
+          <img src="img/model1.jpg">
+          </div>
+          <span class="card-title">Modelo De Currículo 1</span>
+          <a href="#modal6" class="modal-trigger btn-floating halfway-fab waves-effect waves-light red create-curriculum"><i class="material-icons">add</i></a>
         </div>
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+          <p>Um estilo de currículo Dark, com um belo design e agradável ao olhar</p>
         </div>
       </div>
     </div>
     <div class="col s4">
-    	 <div class="card">
+    	 <div class="card hoverable">
         <div class="card-image">
+        	<div>
           <img src="img/office.jpg">
+          </div>
           <span class="card-title">Card Title</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          <a class="btn-floating halfway-fab waves-effect waves-light red disabled"><i class="material-icons">add</i></a>
         </div>
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+          <p>Adicionaremos novos modelos em breve</p>
         </div>
       </div>
     </div>

@@ -24,7 +24,6 @@ $r= new Referencia;
 		}
 		if ($_GET['user']=="update") {
 			if ($_POST) {
-				echo '<script>alert("adasdasdasds");</script>';
 				$pastaPerfil = "img/users/perfil";
 				$pastaCapa = "img/users/capa";
 				$tempPerfil = $_FILES['foto-perfil']['temp_name'];
